@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个帧动画</title>
+    <style>
+        #anidem{
+            width: 480px;
+            height: 480px;
+            background-image: url("erik.jpg");
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div id="anidem"></div>
+
+    <script>
+        var anidem = document.getElementById('anidem');
+        var count = 0;
+        var counts = 0;
+        setInterval(function () {
+            if (counts <17){
+                anidem.style.backgroundPosition = ((count) + "px " + (-480*counts) + "px");//"px "空格很重要
+                console.log(counts);
+                counts++;
+            }
+            else if (counts >= 17) {
+                counts=0;
+                anidem.style.backgroundPosition = ((count) + "px " + (-480*counts) + "px");//"px "空格很重要
+                console.log(counts);
+                counts++;
+            }
+        },100);
+    </script>
+</body>
+</html>
